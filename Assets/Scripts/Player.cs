@@ -32,12 +32,26 @@ public class Player : MonoBehaviour
         healthSlider.value = health;
         healthText.text = health+"";
 
+        Ray myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitInfo;
+
         if (Input.GetMouseButtonDown(0))
         {
-            
             shot.Play();
             bullet.Play();
+
+            if(Physics.Raycast(myRay, out hitInfo))
+            {
+                if (hitInfo.collider.CompareTag("Enemy"))
+                {
+                    Debug.Log("Choco con enemigo");
+                    Enemy en = hitInfo.collider.gameObject.GetComponent<Enemy>();
+                    en.health =- 10f;
+                }
+            }
+            
         }
+        
     }
 
    
