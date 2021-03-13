@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 80;
+        health = 100;
     }
 
     // Update is called once per frame
@@ -44,9 +44,7 @@ public class Player : MonoBehaviour
             {
                 if (hitInfo.collider.CompareTag("Enemy"))
                 {
-                    Debug.Log("Choco con enemigo");
-                    Enemy en = hitInfo.collider.gameObject.GetComponent<Enemy>();
-                    en.health =- 10f;
+                    hitInfo.collider.GetComponentInParent<Enemy>().health -= 20f;
                 }
             }
             
