@@ -17,7 +17,7 @@ public class musicManager : MonoBehaviour
     {
         if (!music.isPlaying)
         {
-            int song = Random.Range(0, songs.Length + 1);
+            int song = Random.Range(0, songs.Length);
             music.PlayOneShot(songs[song]);
         }
     }

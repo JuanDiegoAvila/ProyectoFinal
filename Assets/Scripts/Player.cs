@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public static float health;
+    public float health;
 
     public Text healthText;
     public Slider healthSlider;
@@ -14,11 +14,6 @@ public class Player : MonoBehaviour
 
     public ParticleSystem bullet;
 
-    public static float Health
-    {
-        get { return health; }
-        set { health = value; }
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +40,7 @@ public class Player : MonoBehaviour
                 if (hitInfo.collider.CompareTag("Enemy"))
                 {
                     hitInfo.collider.GetComponentInParent<Enemy>().health -= 20f;
+                    hitInfo.collider.GetComponentInParent<Enemy>().GetComponent<Animator>().SetBool("GetHit", true);
                 }
             }
             
