@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class StaffAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    private bool canAttack;
+  
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Choco");
-        if (collision.gameObject.tag == "Player")
+        if((gameObject.GetComponentInParent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 <= 0.5f)
+            canAttack = true;
+        else
+            canAttack = false;
+        
+
+        if (collision.gameObject.tag == "Player" && canAttack)
         {
-            collision.gameObject.GetComponent<Player>().health -= 5f;
+            collision.gameObject.GetComponent<Player>().health -= 1.0f;
         }
+
     }
 }

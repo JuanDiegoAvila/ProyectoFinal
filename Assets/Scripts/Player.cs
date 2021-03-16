@@ -45,7 +45,13 @@ public class Player : MonoBehaviour
             }
             
         }
-        
+
+        if (health <= 0)
+        {
+            Time.timeScale = 0f;
+        }
+
+
     }
 
    

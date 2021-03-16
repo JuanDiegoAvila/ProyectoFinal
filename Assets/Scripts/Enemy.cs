@@ -80,9 +80,4 @@ public class Enemy : MonoBehaviour
         RoundManager.Enemies += 1;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.LogError("CHOCOOO");
-    }
-
 }
