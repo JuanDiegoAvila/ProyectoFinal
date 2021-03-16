@@ -10,6 +10,8 @@ public class RoundManager : MonoBehaviour
     public GameObject[] enemies;
     public AudioClip[] clips;
 
+    public GameObject apear;
+
     public PostProcessProfile profile;
     
     private static int enemyCount;
@@ -43,7 +45,12 @@ public class RoundManager : MonoBehaviour
             {
                 int spawn = Random.Range(0, 3);
                 int enemy = Random.Range(0, 2);
+
                 Instantiate(enemies[enemy], spawnPoints[spawn].transform.position, Quaternion.identity);
+
+                GameObject effect = Instantiate(apear, spawnPoints[spawn].transform.position, Quaternion.identity) as GameObject;
+                
+                Destroy(effect, 0.5f);
             }
 
         }

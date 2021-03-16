@@ -34,8 +34,14 @@ public class mainMenu : MonoBehaviour
 
     private IEnumerator SceneLoad(int scene)
     {
-        LevelLoader.SetActive(!LevelLoader.activeSelf);
-        yield return SceneManager.LoadSceneAsync(scene);
-        LevelLoader.SetActive(!LevelLoader.activeSelf);
+        LevelLoader.SetActive(true);
+
+        yield return new WaitForSeconds(0.1f);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(scene);
+
+        while (!operation.isDone)
+            yield return null;
+       
     }
 }
