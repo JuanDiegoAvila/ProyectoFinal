@@ -72,11 +72,16 @@ public class pauseManager : MonoBehaviour
 
     public void restartGame()
     {
+        Time.timeScale = 1.0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         StartCoroutine(SceneLoad(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void mainMenu()
     {
+        Time.timeScale = 1.0f;
+        
         StartCoroutine(SceneLoad(0));
     }
 
