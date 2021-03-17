@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthSlider.value = health;
+        healthSlider.value = health/100;
         healthText.text = health+"";
 
         Ray myRay = Camera.main.ScreenPointToRay(Input.mousePosition);

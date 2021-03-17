@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class mainMenu : MonoBehaviour
 {
     public GameObject LevelLoader;
+
+    public GameObject configMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,14 @@ public class mainMenu : MonoBehaviour
     public void Cave()
     {
         StartCoroutine(SceneLoad(2)); 
+    }
+
+    public void ToggleConfig()
+    {
+        if (configMenu)
+        {
+            configMenu.SetActive(!configMenu.activeSelf);
+        }
     }
 
     public void exit()
