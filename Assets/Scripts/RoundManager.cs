@@ -17,6 +17,7 @@ public class RoundManager : MonoBehaviour
     public GameObject lost;
     public Text killText;
     public Text roundText;
+
     Player player;
 
     public static int totalEnemies;
