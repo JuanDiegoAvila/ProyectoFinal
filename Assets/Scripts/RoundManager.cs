@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class RoundManager : MonoBehaviour
 {
@@ -11,6 +12,20 @@ public class RoundManager : MonoBehaviour
     public AudioClip[] clips;
 
     public GameObject apear;
+    public FirstPersonController fpsController;
+
+    public GameObject lost;
+    public Text killText;
+    public Text roundText;
+    Player player;
+
+    public static int totalEnemies;
+
+    public static int TotalEnemies
+    {
+        get { return totalEnemies; }
+        set { totalEnemies = value; }
+    }
 
     public PostProcessProfile profile;
     
@@ -22,12 +37,22 @@ public class RoundManager : MonoBehaviour
         get { return enemyCount; }
         set { enemyCount = value; }
     }
+
+
     public Text rnd;
-    public int round;
+    public static int round;
+
+    public static int Rounds
+    {
+        get { return round; }
+        set { round = value; }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
- 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         enemyCount = 0;
         round = 1;
 
@@ -75,5 +100,21 @@ public class RoundManager : MonoBehaviour
 
 
     }
+
+    public void Lost()
+    {
+        Time.timeScale = 0f;
+        lost.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        FirstPersonController.active = false;
+        player.enabled = false;
+
+        killText.text = "Kills: " + RoundManager.TotalEnemies;
+        roundText.text = "Round: " + RoundManager.Rounds;
+    }
+
+    
 
 }

@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
         healthSlider.value = CalculateHealth();
         if(health <= 0)
         {
-
+            
             agent.isStopped = true;
             
             StartCoroutine("killed");         
@@ -77,7 +77,9 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
+
         RoundManager.Enemies += 1;
+        RoundManager.totalEnemies += 1;
     }
 
 }

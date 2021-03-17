@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     public Text healthText;
     public Slider healthSlider;
 
+    public GameObject rnd;
+    RoundManager rManager;
+
     public AudioSource shot;
 
     public ParticleSystem bullet;
@@ -18,6 +21,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rManager = rnd.GetComponent<RoundManager>();
         health = 100;
     }
 
@@ -48,7 +52,8 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Time.timeScale = 0f;
+            rManager.Lost();
+
         }
 
 
