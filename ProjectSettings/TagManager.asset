@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Staff
   - Configuration
+  - Enemy Killed
   layers:
   - Default
   - TransparentFX

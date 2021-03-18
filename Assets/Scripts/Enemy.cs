@@ -15,11 +15,13 @@ public class Enemy : MonoBehaviour
     public float maxHealth;
     public float health;
 
+    public AudioSource Killed;
     NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
+        Killed = GameObject.FindGameObjectWithTag("Enemy Killed").GetComponent<AudioSource>();
         an = GetComponent<Animator>();
         health = maxHealth;
         healthSlider = GetComponentInChildren<Slider>();
@@ -57,8 +59,7 @@ public class Enemy : MonoBehaviour
         {
             
             agent.isStopped = true;
-            
-            StartCoroutine("killed");         
+            StartCoroutine("killed");
             
         }
         if(health > maxHealth)
@@ -75,11 +76,15 @@ public class Enemy : MonoBehaviour
 
     IEnumerator killed()
     {
+        
         yield return new WaitForSeconds(3);
+      
         Destroy(gameObject);
 
         RoundManager.Enemies += 1;
         RoundManager.totalEnemies += 1;
+        Killed.Play();
+        
     }
 
 }

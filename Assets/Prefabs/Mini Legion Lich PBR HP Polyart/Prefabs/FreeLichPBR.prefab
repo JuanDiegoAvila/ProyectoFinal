@@ -94,6 +94,7 @@ MonoBehaviour:
   destroy: 0
   maxHealth: 100
   health: 0
+  Killed: {fileID: 0}
 --- !u!54 &3037952325717270017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1110,7 +1111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3c5bc0c1819ab4b8f6f068b77b4653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hit: {fileID: 0}
 --- !u!54 &6226403408982932716
 Rigidbody:
   m_ObjectHideFlags: 0
