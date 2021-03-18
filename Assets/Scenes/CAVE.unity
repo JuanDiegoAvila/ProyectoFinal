@@ -1078,23 +1078,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 651152933}
         m_MethodName: set_volume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11119,12 +11108,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716aa1302ba12d04289cac00ae054a73, type: 3}
---- !u!198 &923414242 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1577501794}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &923414244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011227296186, guid: 9defeac88977c0d448aa4541073ee9e4,
@@ -14402,7 +14385,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1318483260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a4bad5133eb9d447a4a15b628772c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 06982b4af13c35941b23d5ebecd89d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fpsController: {fileID: 1596514826}
@@ -14857,7 +14840,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 454827903}
         m_MethodName: set_volume
         m_Mode: 0
         m_Arguments:
@@ -16130,7 +16113,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318483261}
+      - m_Target: {fileID: 0}
         m_MethodName: mainMenu
         m_Mode: 1
         m_Arguments:
@@ -17436,15 +17419,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1596514821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d300950745bd72418a45bb5f9648667, type: 3}
+  m_Script: {fileID: 11500000, guid: e6f9f392131aa2e4ab8e067f1d2e585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   healthText: {fileID: 247678714}
   healthSlider: {fileID: 143690662}
-  rnd: {fileID: 0}
   shot: {fileID: 651152933}
-  bullet: {fileID: 923414242}
+  bullet: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
 --- !u!136 &1596514823
 CapsuleCollider:
   m_ObjectHideFlags: 0
