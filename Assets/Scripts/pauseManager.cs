@@ -11,6 +11,7 @@ public class pauseManager : MonoBehaviour
 
     public FirstPersonController fpsController;
     Player player;
+    
 
     public GameObject pauseMenu;
     public GameObject configMenu;
@@ -18,7 +19,7 @@ public class pauseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        StaffAttack.cave = false;
         FirstPersonController.Enabled = true;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 

@@ -15,7 +15,7 @@ public class PauseMenuCave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        StaffAttack.cave = true;
         FirstPersonController.Enabled = true;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCave>();
 

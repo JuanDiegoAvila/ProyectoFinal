@@ -5,7 +5,14 @@ using UnityEngine;
 public class StaffAttack : MonoBehaviour
 {
     private bool canAttack;
-  
+    public static bool cave = false;
+    AudioSource Hit;
+
+    private void Start()
+    {
+        Hit= GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if((gameObject.GetComponentInParent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 <= 0.5f)
@@ -16,7 +23,19 @@ public class StaffAttack : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && canAttack)
         {
-            collision.gameObject.GetComponent<Player>().health -= 1.0f;
+            if (!Hit.isPlaying)
+            {
+                Hit.Play();
+            }
+            if (cave)
+            {
+                collision.gameObject.GetComponent<PlayerCave>().health -= 1.0f;
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Player>().health -= 1.0f;
+            }
+            
         }
 
     }
