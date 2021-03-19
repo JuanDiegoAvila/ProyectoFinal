@@ -11,10 +11,12 @@ public class RoundManager : MonoBehaviour
     public GameObject[] enemies;
     public AudioClip[] clips;
 
+    public static bool hasLost;
     public GameObject apear;
     public FirstPersonController fpsController;
 
     public GameObject lost;
+    public AudioSource MusicManager;
     public Text killText;
     public Text roundText;
 
@@ -57,6 +59,7 @@ public class RoundManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         enemyCount = 0;
         round = 1;
+        hasLost = false;
 
     }
 
@@ -104,8 +107,13 @@ public class RoundManager : MonoBehaviour
 
     public void Lost()
     {
+        WinCave.losewin = true;
+        hasLost = true;
         Time.timeScale = 0f;
         lost.SetActive(true);
+        
+
+        lost.GetComponent<AudioSource>().Play();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

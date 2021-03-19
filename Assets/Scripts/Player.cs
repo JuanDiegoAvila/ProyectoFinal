@@ -14,13 +14,15 @@ public class Player : MonoBehaviour
     RoundManager rManager;
 
     public AudioSource shot;
-
+    public GameObject musicManager;
+    AudioSource backMusic;
     public ParticleSystem bullet;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        backMusic = musicManager.GetComponent<AudioSource>();
         rManager = rnd.GetComponent<RoundManager>();
         health = 100;
     }
@@ -54,6 +56,7 @@ public class Player : MonoBehaviour
         {
             rManager.Lost();
 
+            backMusic.Stop();
         }
 
         if(health > 100)

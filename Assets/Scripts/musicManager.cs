@@ -15,10 +15,12 @@ public class musicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!music.isPlaying)
+        if (!music.isPlaying && !RoundManager.hasLost && !WinCave.losewin)
         {
+            
             int song = Random.Range(0, songs.Length);
             music.PlayOneShot(songs[song]);
+            
         }
     }
 }
