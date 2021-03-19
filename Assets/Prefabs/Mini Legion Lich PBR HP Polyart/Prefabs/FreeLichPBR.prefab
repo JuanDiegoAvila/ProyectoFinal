@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2ed92aa7f452142b95ffb74a3e7cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUp: {fileID: 5409216469492053389, guid: 9bd9c11a88f0fb04793e7a99ead36d86, type: 3}
   beingKilled: 0
   destroy: 0
   maxHealth: 100

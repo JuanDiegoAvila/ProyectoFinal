@@ -46,6 +46,11 @@ public class PlayerCave : MonoBehaviour
 
         }
 
+        if (health > 100)
+        {
+            health = 100;
+        }
+
 
     }
 

@@ -18,6 +18,7 @@ public class RoundManager : MonoBehaviour
     public Text killText;
     public Text roundText;
 
+
     Player player;
 
     public static int totalEnemies;
@@ -84,7 +85,6 @@ public class RoundManager : MonoBehaviour
         {
             enemyCount = 0;
             round++;
-            Debug.Log(round);
         }
 
         if(round%5 == 0)

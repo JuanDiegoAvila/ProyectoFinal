@@ -56,6 +56,11 @@ public class Player : MonoBehaviour
 
         }
 
+        if(health > 100)
+        {
+            health = 100;
+        }
+
 
     }
 

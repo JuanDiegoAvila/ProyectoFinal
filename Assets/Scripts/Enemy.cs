@@ -10,6 +10,10 @@ public class Enemy : MonoBehaviour
     Slider healthSlider;
     Animator an;
 
+
+    public GameObject powerUp;
+    int getPower;
+
     public bool beingKilled = false;
     public bool destroy = false;
     public float maxHealth;
@@ -57,7 +61,6 @@ public class Enemy : MonoBehaviour
         healthSlider.value = CalculateHealth();
         if(health <= 0)
         {
-            
             agent.isStopped = true;
             StartCoroutine("killed");
             
@@ -81,10 +84,18 @@ public class Enemy : MonoBehaviour
       
         Destroy(gameObject);
 
+        Vector3 position = gameObject.transform.position;
         RoundManager.Enemies += 1;
         RoundManager.totalEnemies += 1;
         Killed.Play();
-        
+
+        getPower = Random.Range(1, 3);
+        if (getPower == 2)
+        {
+            //suelta un power up.
+            Instantiate(powerUp, new Vector3(position.x, position.y+3f, position.z), Quaternion.identity);
+        }
+
     }
 
 }
